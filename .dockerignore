@@ -1,0 +1,36 @@
+# Dependencies — reinstalled inside the image
+node_modules/
+
+# Compiled output — rebuilt inside the image
+dist/
+
+# Secrets — NEVER bake into the image
+.env
+.env.*
+*.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Version control
+.git/
+.gitignore
+
+# SajiCode internal tooling
+.sajicode/
+
+# Test coverage artefacts
+coverage/
+.nyc_output/
+
+# Editor / OS artefacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# CI / local scripts that don't belong in the image
+*.sh

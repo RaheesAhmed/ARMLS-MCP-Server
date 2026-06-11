@@ -1,0 +1,62 @@
+{
+  "model": {
+    "provider": "ollama",
+    "modelName": "minimax-m2.5:cloud",
+    "temperature": 0,
+    "maxRetries": 3,
+    "baseUrl": "http://localhost:11434"
+  },
+  "riskTolerance": "medium",
+  "humanInTheLoop": {
+    "enabled": false,
+    "tools": {
+      "execute": {
+        "allowedDecisions": [
+          "approve",
+          "edit",
+          "reject"
+        ]
+      },
+      "delete_file": {
+        "allowedDecisions": [
+          "approve",
+          "reject"
+        ]
+      },
+      "write_file": false,
+      "edit_file": false,
+      "read_memory_index": false,
+      "read_topic": false,
+      "write_memory_topic": false,
+      "search_transcripts": false,
+      "append_transcript": false
+    },
+    "allowedCommands": [
+      "npm install",
+      "npm run",
+      "npm test",
+      "npx tsc",
+      "npx tsx",
+      "mkdir",
+      "touch",
+      "cat ",
+      "echo ",
+      "cd ",
+      "pwd",
+      "ls ",
+      "dir ",
+      "git status",
+      "git log",
+      "git diff",
+      "git branch",
+      "node ",
+      "python ",
+      "python3 "
+    ]
+  },
+  "whatsapp": {
+    "enabled": false,
+    "mode": "admin"
+  },
+  "hooks": {}
+}

@@ -1,0 +1,29 @@
+# ARMLS MCP Server — Project DNA
+
+## Overview
+Remote MCP (Model Context Protocol) server that bridges ARMLS Spark API (FlexMLS Web API) with Claude AI. Exposes 6 real estate tools for internal agent use: listing search, comp sales, market stats, listing lookup, trend data, and open house data. HTTP/SSE transport, deployed on Railway/Render.
+
+## Tech Stack
+Node.js, TypeScript, @modelcontextprotocol/sdk, Express.js, Zod (validation), dotenv, Axios (HTTP client for Spark API). Deployment: Railway or Render via Dockerfile. No database — stateless API proxy.
+
+## Architecture
+Single Node.js/TypeScript server. Entry: src/index.ts. Transport: HTTP/SSE via @modelcontextprotocol/sdk SSEServerTransport. Tools: src/tools/ (one file per tool). Spark API client: src/spark/client.ts. Config: src/config.ts (env vars). Zod schemas: src/schemas/. Dockerfile + railway.toml for deployment.
+
+## Conventions
+TypeScript strict mode. All env vars via process.env with config.ts validation at startup. Zod for all input validation. Tool files export a ToolDefinition object. No hardcoded credentials. Error responses follow MCP error format. camelCase for TS, kebab-case for files.
+
+## Key Decisions
+1. Node.js + TypeScript chosen for MCP SDK compatibility. 2. @modelcontextprotocol/sdk used for protocol compliance. 3. HTTP/SSE transport (not stdio) for remote server requirement. 4. Stateless design — no DB needed, all data from Spark API. 5. Zod validation on all tool inputs before API calls. 6. Railway deployment with Dockerfile for portability.
+
+## Patterns Learned
+
+## Known Issues
+
+## Unfinished Work
+
+## User Preferences
+
+## Session History
+
+---
+*Last updated: 2026-06-11T15:01:07.858Z*

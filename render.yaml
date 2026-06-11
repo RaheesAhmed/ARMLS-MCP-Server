@@ -1,0 +1,21 @@
+# Render.com deployment manifest — alternative to Railway
+# Docs: https://render.com/docs/render-yaml-spec
+services:
+  - type: web
+    name: armls-mcp-server
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: node dist/index.js
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SPARK_API_KEY
+        sync: false          # Set manually in Render dashboard — never committed
+      - key: SPARK_BASE_URL
+        sync: false          # Set manually in Render dashboard — never committed
+      - key: PORT
+        value: "3000"
+      - key: ALLOWED_ORIGINS
+        sync: false          # Optional — set in dashboard if CORS restriction needed

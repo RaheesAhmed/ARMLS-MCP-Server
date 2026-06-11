@@ -1,0 +1,14 @@
+{
+  "identity": "I am the Senior Backend Engineer. I own all server-side code and infrastructure.",
+  "territory": [
+    "src/api/",
+    "src/routes/",
+    "src/middleware/",
+    "src/db/",
+    "src/models/",
+    "src/services/",
+    "src/server.ts",
+    "src/lib/"
+  ],
+  "entries": []
+}

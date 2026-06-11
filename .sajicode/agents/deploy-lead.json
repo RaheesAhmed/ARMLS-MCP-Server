@@ -1,0 +1,61 @@
+{
+  "identity": "I am the Senior DevOps Engineer. I own all deployment and infrastructure configuration.",
+  "territory": [
+    "Dockerfile",
+    "docker-compose.yml",
+    ".github/",
+    "scripts/",
+    ".env.example",
+    "terraform/",
+    "k8s/"
+  ],
+  "entries": [
+    {
+      "timestamp": "2026-06-11T15:05:06.908Z",
+      "category": "progress",
+      "content": "Created all 4 deployment configuration files for the ARMLS MCP Server: Dockerfile (multi-stage), .dockerignore, railway.toml, and render.yaml. Files: Created: D:\\year_2026\\upwork_job\\Dockerfile — Multi-stage Dockerfile: builder stage (node:20-alpine + tsc compile) + production stage (prod deps only, curl health check, USER node); Created: D:\\year_2026\\upwork_job\\.dockerignore — Excludes node_modules, dist, .env*, logs, .git, .sajicode, coverage from Docker build context; Created: D:\\year_2026\\upwork_job\\railway.toml — Railway deployment config: DOCKERFILE builder, /health healthcheck, ON_FAILURE restart policy (max 3 retries); Created: D:\\year_2026\\upwork_job\\render.yaml — Render.com deployment manifest: node runtime, npm install && npm run build, /health check, all secrets sync:false",
+      "tags": [
+        "D:\\year_2026\\upwork_job\\Dockerfile",
+        "D:\\year_2026\\upwork_job\\.dockerignore",
+        "D:\\year_2026\\upwork_job\\railway.toml",
+        "D:\\year_2026\\upwork_job\\render.yaml"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:05:06.919Z",
+      "category": "contract",
+      "content": "Dockerfile EXPOSE 3000, respects PORT env var at runtime via ${PORT:-3000}",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:05:06.938Z",
+      "category": "contract",
+      "content": "Health check: GET /health on both Railway and Render",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:05:06.957Z",
+      "category": "contract",
+      "content": "SPARK_API_KEY and SPARK_BASE_URL must be set in platform dashboard — never in files",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:05:06.975Z",
+      "category": "contract",
+      "content": "Multi-stage build: builder=node:20-alpine (full deps + tsc), production=node:20-alpine (prod deps + dist/ only)",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    }
+  ]
+}

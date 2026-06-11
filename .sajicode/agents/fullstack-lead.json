@@ -1,0 +1,10 @@
+{
+  "identity": "I am the Senior Full-Stack Engineer. I own complete feature slices.",
+  "territory": [
+    "src/features/",
+    "src/app/",
+    "src/api/",
+    "src/components/"
+  ],
+  "entries": []
+}
