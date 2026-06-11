@@ -25,5 +25,14 @@ TypeScript strict mode. All env vars via process.env with config.ts validation a
 
 ## Session History
 
+## UnfinishedWork
+- Set real SPARK_API_KEY and SPARK_BASE_URL in .env before running
+- Deploy to Railway or Render (follow README deployment section)
+- Add MCP server URL to Claude.ai Team connectors
+- Test each tool with real ARMLS Spark API credentials
+- Optional: add rate limiting middleware for production hardening
+
+*Updated 2026-06-11T15:16:21.378Z*
+
 ---
-*Last updated: 2026-06-11T15:01:07.858Z*
+*Last updated: 2026-06-11T15:16:21.381Z*
