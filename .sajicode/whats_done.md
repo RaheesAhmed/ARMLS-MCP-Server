@@ -17,3 +17,30 @@
 ### Still Needs Doing
 - mcp-specialist to complete src/ implementation so docker build can be tested end-to-end
 - Set SPARK_API_KEY and SPARK_BASE_URL in Railway/Render dashboard before first deploy
+---
+## [2026-06-11T15:14:47.499Z] mcp-specialist
+**Status**: ✅ complete
+**Summary**: Built complete ARMLS MCP Server: 6 tools, HTTP/SSE transport, TypeScript strict mode, zero TS errors, npm run build passes
+### Files Created
+- `src/config.ts` — Zod env var validation at startup
+- `src/spark/client.ts` — Axios Spark API client with Bearer auth + error interceptor
+- `src/tools/searchListings.ts` — search_listings MCP tool
+- `src/tools/getComparableSales.ts` — get_comparable_sales MCP tool
+- `src/tools/getMarketStatistics.ts` — get_market_statistics MCP tool
+- `src/tools/getListingByMls.ts` — get_listing_by_mls MCP tool
+- `src/tools/getTrendData.ts` — get_trend_data MCP tool
+- `src/tools/getOpenHouses.ts` — get_open_houses MCP tool
+- `src/server.ts` — McpServer with all 6 tools registered
+- `src/index.ts` — Express HTTP server: /sse, /messages, /health
+- `package.json` — armls-mcp-server npm package
+- `tsconfig.json` — TypeScript strict mode config
+- `.env.example` — Example environment variables
+- `README.md` — Full setup, tools, deployment, how-to-add-tool guide
+- `.gitignore` — Ignores node_modules, dist, .env
+### Cross-Agent Contracts
+- GET /sse — SSE endpoint for Claude to connect
+- POST /messages?sessionId=<id> — tool call messages
+- GET /health — {status: 'ok', timestamp}
+- ENV: SPARK_API_KEY (required), SPARK_BASE_URL (required), PORT (default 3000), ALLOWED_ORIGINS (optional)
+- MCP SDK v1.29.0: McpServer from @modelcontextprotocol/sdk/server/mcp.js, SSEServerTransport from server/sse.js
+- Zod v4.4.3 (classic API), Express v5.2.1

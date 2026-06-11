@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "experiences": [
+    {
+      "taskType": "build-mcp-server",
+      "techStack": [
+        "@modelcontextprotocol/sdk",
+        "express",
+        "typescript",
+        "zod",
+        "axios"
+      ],
+      "agent": "mcp-specialist",
+      "outcome": "success",
+      "description": "Built ARMLS MCP Server with HTTP/SSE transport using @modelcontextprotocol/sdk v1.29.0, Zod v4, Express v5",
+      "lessons": [
+        "MCP SDK v1.29.0 ships with Zod v4 (classic API) — use 'from zod' which re-exports v4/classic/external.js, backward compatible with v3 syntax",
+        "Express v5.2.1 is installed as a dependency of @modelcontextprotocol/sdk — use @types/express v5 not v4",
+        "SSEServerTransport constructor takes (endpoint: string, res: ServerResponse) — one transport per SSE connection",
+        "server.tool() takes raw Zod shape objects (NOT z.object()) as the schema parameter — ZodRawShapeCompat type",
+        "Each SSE connection should create a fresh McpServer instance for stateless design",
+        "Spark API error envelope: response.data.D.Message for error messages",
+        "When accessing nested unknown objects in TypeScript strict mode, cast intermediate objects: const envelope = data?.['D'] as Record<string, unknown>",
+        "git commit -m with spaces in message fails in cmd.exe — use git commit -F .commitmsg pattern instead"
+      ],
+      "tags": [
+        "mcp",
+        "sse",
+        "express",
+        "zod-v4",
+        "typescript-strict",
+        "spark-api"
+      ],
+      "id": "exp-1781190898432-9ddurs",
+      "timestamp": "2026-06-11T15:14:58.432Z"
+    }
+  ]
+}

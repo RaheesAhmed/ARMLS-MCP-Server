@@ -7,5 +7,109 @@
     "src/mcp/",
     "packages/"
   ],
-  "entries": []
+  "entries": [
+    {
+      "timestamp": "2026-06-11T15:14:35.581Z",
+      "category": "progress",
+      "content": "Built complete ARMLS MCP Server from scratch: 6 tools, HTTP/SSE transport, TypeScript strict mode, zero TS errors. Files: Created: D:\\year_2026\\upwork_job\\package.json — npm package config for armls-mcp-server; Created: D:\\year_2026\\upwork_job\\tsconfig.json — TypeScript config: ES2020, commonjs, strict mode; Created: D:\\year_2026\\upwork_job\\src\\config.ts — Zod env var validation, exports typed config object; Created: D:\\year_2026\\upwork_job\\src\\spark\\client.ts — Axios client for Spark API with Bearer auth + error interceptor; Created: D:\\year_2026\\upwork_job\\src\\tools\\searchListings.ts — search_listings tool: search by city/zip/price/type/status; Created: D:\\year_2026\\upwork_job\\src\\tools\\getComparableSales.ts — get_comparable_sales tool: comp sales near address; Created: D:\\year_2026\\upwork_job\\src\\tools\\getMarketStatistics.ts — get_market_statistics tool: median price, DOM, list-to-sale ratio; Created: D:\\year_2026\\upwork_job\\src\\tools\\getListingByMls.ts — get_listing_by_mls tool: full listing detail by MLS number; Created: D:\\year_2026\\upwork_job\\src\\tools\\getTrendData.ts — get_trend_data tool: active vs sold trends by period; Created: D:\\year_2026\\upwork_job\\src\\tools\\getOpenHouses.ts — get_open_houses tool: open houses by area/date range; Created: D:\\year_2026\\upwork_job\\src\\server.ts — McpServer instance with all 6 tools registered; Created: D:\\year_2026\\upwork_job\\src\\index.ts — Express app: GET /sse, POST /messages, GET /health, CORS; Created: D:\\year_2026\\upwork_job\\.env.example — Example env vars file; Created: D:\\year_2026\\upwork_job\\README.md — Comprehensive README with setup, tools, how-to-add-tool guide; Created: D:\\year_2026\\upwork_job\\.gitignore — Ignores node_modules, dist, .env",
+      "tags": [
+        "D:\\year_2026\\upwork_job\\package.json",
+        "D:\\year_2026\\upwork_job\\tsconfig.json",
+        "D:\\year_2026\\upwork_job\\src\\config.ts",
+        "D:\\year_2026\\upwork_job\\src\\spark\\client.ts",
+        "D:\\year_2026\\upwork_job\\src\\tools\\searchListings.ts",
+        "D:\\year_2026\\upwork_job\\src\\tools\\getComparableSales.ts",
+        "D:\\year_2026\\upwork_job\\src\\tools\\getMarketStatistics.ts",
+        "D:\\year_2026\\upwork_job\\src\\tools\\getListingByMls.ts",
+        "D:\\year_2026\\upwork_job\\src\\tools\\getTrendData.ts",
+        "D:\\year_2026\\upwork_job\\src\\tools\\getOpenHouses.ts",
+        "D:\\year_2026\\upwork_job\\src\\server.ts",
+        "D:\\year_2026\\upwork_job\\src\\index.ts",
+        "D:\\year_2026\\upwork_job\\.env.example",
+        "D:\\year_2026\\upwork_job\\README.md",
+        "D:\\year_2026\\upwork_job\\.gitignore"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.588Z",
+      "category": "contract",
+      "content": "GET /sse — SSE endpoint for Claude to connect (creates new McpServer + SSEServerTransport per connection)",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.597Z",
+      "category": "contract",
+      "content": "POST /messages?sessionId=<id> — tool call message endpoint",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.604Z",
+      "category": "contract",
+      "content": "GET /health — returns {status: 'ok', timestamp}",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.611Z",
+      "category": "contract",
+      "content": "ENV: SPARK_API_KEY (required), SPARK_BASE_URL (required), PORT (default 3000), ALLOWED_ORIGINS (default empty=all)",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.621Z",
+      "category": "contract",
+      "content": "MCP SDK: @modelcontextprotocol/sdk v1.29.0, McpServer from server/mcp.js, SSEServerTransport from server/sse.js",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.626Z",
+      "category": "contract",
+      "content": "Zod v4.4.3 installed (classic API, backward compatible with v3 syntax)",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.629Z",
+      "category": "contract",
+      "content": "Express v5.2.1 installed (from MCP SDK dependency)",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.637Z",
+      "category": "contract",
+      "content": "Tool schemas use raw Zod shape objects (NOT z.object()) for server.tool() registration",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T15:14:35.642Z",
+      "category": "contract",
+      "content": "Each SSE connection creates a fresh McpServer instance — stateless design",
+      "tags": [
+        "api",
+        "interface"
+      ]
+    }
+  ]
 }
