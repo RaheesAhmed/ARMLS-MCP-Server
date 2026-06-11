@@ -32,7 +32,7 @@ This server exposes 6 MCP tools that Claude can call to query live MLS data:
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/RaheesAhmed/ARMLS-MCP-Server.git
 cd armls-mcp-server
 ```
 
