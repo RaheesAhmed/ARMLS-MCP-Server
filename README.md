@@ -2,6 +2,8 @@
 
 A remote [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that bridges the **ARMLS Spark API** (FlexMLS Web API) with **Claude AI**. Built for real estate agents in Maricopa County, AZ.
 
+[![Built by SAJICODE](https://img.shields.io/badge/Built%20by-SAJICODE-blue?style=for-the-badge&logo=github)](https://github.com/RaheesAhmed/SajiCode)
+
 ## Overview
 
 This server exposes 6 MCP tools that Claude can call to query live MLS data:
